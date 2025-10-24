@@ -1757,7 +1757,7 @@ function redzlib:MakeWindow(Configs)
 		
 		for _,Button in pairs(ButtonsHolder:GetChildren()) do
 			if Button:IsA("TextButton") then
-				Button.Size = UDim2.new(1 / ButtonCount, -(((ButtonCount - 1) * 20) / ButtonCount), 0, 32) -- Fluent Library :)
+				Button.Size = UDim2.new(1 / ButtonCount, -(((ButtonCount - 1) * 20) / ButtonCount), 0, 32) 
 			end
 		end
 		Button.Activated:Connect(Dialog.Close)
@@ -1816,7 +1816,7 @@ function Window:MakeTab(paste, Configs)
 	
 	local LabelIcon = InsertTheme(Create("ImageLabel", TabSelect, {
 		Position = UDim2.new(0, 8, 0.5),
-		Size = UDim2.new(0, 15, 0, 15), -- Aumentado
+		Size = UDim2.new(0, 15, 0, 15), 
 		AnchorPoint = Vector2.new(0, 0.5),
 		Image = TIcon or "",
 		BackgroundTransparency = 1,
@@ -1824,7 +1824,7 @@ function Window:MakeTab(paste, Configs)
 	}), "Text")
 	
 	local Selected = InsertTheme(Create("Frame", TabSelect, {
-		Size = FirstTab and UDim2.new(0, 4, 0, 4) or UDim2.new(0, 4, 0, 15), -- Aumentado
+		Size = FirstTab and UDim2.new(0, 4, 0, 4) or UDim2.new(0, 4, 0, 15), 
 		Position = UDim2.new(0, 1, 0.5),
 		AnchorPoint = Vector2.new(0, 0.5),
 		BackgroundColor3 = Theme["Color Theme"],
@@ -1835,7 +1835,7 @@ function Window:MakeTab(paste, Configs)
 		Size = UDim2.new(1, 0, 1, 0),
 		Position = UDim2.new(0, 0, 1),
 		AnchorPoint = Vector2.new(0, 1),
-		ScrollBarThickness = 2, -- Aumentado
+		ScrollBarThickness = 2, 
 		BackgroundTransparency = 1,
 		ScrollBarImageTransparency = 0.2,
 		ScrollBarImageColor3 = Theme["Color Theme"],
@@ -1846,12 +1846,12 @@ function Window:MakeTab(paste, Configs)
 		Name = ("Container %i [ %s ]"):format(#ContainerList + 1, TName)
 	}, {
 		Create("UIPadding", {
-			PaddingLeft = UDim.new(0, 12), -- Aumentado
+			PaddingLeft = UDim.new(0, 12), 
 			PaddingRight = UDim.new(0, 12),
 			PaddingTop = UDim.new(0, 12),
 			PaddingBottom = UDim.new(0, 12)
 		}), Create("UIListLayout", {
-			Padding = UDim.new(0, 6) -- Aumentado
+			Padding = UDim.new(0, 6) 
 		})
 	}), "ScrollBar")
 	
@@ -1880,7 +1880,7 @@ function Window:MakeTab(paste, Configs)
 		CreateTween({Selected, "BackgroundTransparency", 0, 0.35})
 	end
 	
-	-- Animação no hover da tab
+	
 	TabSelect.MouseEnter:Connect(function()
 		if Container.Parent ~= Containers then
 			CreateTween({TabSelect, "BackgroundTransparency", 0.7, 0.2})
@@ -1921,7 +1921,7 @@ function Window:MakeTab(paste, Configs)
 		local SectionName = type(Configs) == "string" and Configs or Configs[1] or Configs.Name or Configs.Title or Configs.Section
 		
 		local SectionFrame = Create("Frame", Container, {
-			Size = UDim2.new(1, 0, 0, 22), -- Aumentado
+			Size = UDim2.new(1, 0, 0, 22), 
 			BackgroundTransparency = 1,
 			Name = "Option"
 		})
@@ -1987,14 +1987,14 @@ function Window:MakeTab(paste, Configs)
 		local FButton, LabelFunc = ButtonFrame(Container, BName, BDescription, UDim2.new(1, -20))
 		
 		local ButtonIcon = Create("ImageLabel", FButton, {
-			Size = UDim2.new(0, 16, 0, 16), -- Aumentado
+			Size = UDim2.new(0, 16, 0, 16), 
 			Position = UDim2.new(1, -10, 0.5),
 			AnchorPoint = Vector2.new(1, 0.5),
 			BackgroundTransparency = 1,
 			Image = "rbxassetid://10709791437"
 		})
 		
-		-- Animação no ícone do botão
+		
 		FButton.MouseEnter:Connect(function()
 			CreateTween({ButtonIcon, "Rotation", 5, 0.2})
 		end)
@@ -2035,7 +2035,7 @@ function Window:MakeTab(paste, Configs)
 		local Button, LabelFunc = ButtonFrame(Container, TName, TDesc, UDim2.new(1, -38))
 		
 		local ToggleHolder = InsertTheme(Create("Frame", Button, {
-			Size = UDim2.new(0, 38, 0, 20), -- Aumentado
+			Size = UDim2.new(0, 38, 0, 20),
 			Position = UDim2.new(1, -10, 0.5),
 			AnchorPoint = Vector2.new(1, 0.5),
 			BackgroundColor3 = Theme["Color Stroke"]
@@ -2049,7 +2049,7 @@ function Window:MakeTab(paste, Configs)
 		})
 		
 		local Toggle = InsertTheme(Create("Frame", Slider, {
-			Size = UDim2.new(0, 14, 0, 14), -- Aumentado
+			Size = UDim2.new(0, 14, 0, 14), 
 			Position = UDim2.new(0, 0, 0.5),
 			AnchorPoint = Vector2.new(0, 0.5),
 			BackgroundColor3 = Theme["Color Theme"]
@@ -2113,11 +2113,11 @@ function Window:MakeTab(paste, Configs)
 		local Button, LabelFunc = ButtonFrame(Container, DName, DDesc, UDim2.new(1, -180))
 		
 		local SelectedFrame = InsertTheme(Create("Frame", Button, {
-			Size = UDim2.new(0, 150, 0, 20), -- Aumentado
+			Size = UDim2.new(0, 150, 0, 20), 
 			Position = UDim2.new(1, -10, 0.5),
 			AnchorPoint = Vector2.new(1, 0.5),
 			BackgroundColor3 = Theme["Color Stroke"]
-		}), "Stroke")Make("Corner", SelectedFrame, UDim.new(0, 6)) -- Cantos mais arredondados
+		}), "Stroke")Make("Corner", SelectedFrame, UDim.new(0, 6)) 
 		
 		local ActiveLabel = InsertTheme(Create("TextLabel", SelectedFrame, {
 			Size = UDim2.new(0.85, 0, 0.85, 0),
@@ -2131,7 +2131,7 @@ function Window:MakeTab(paste, Configs)
 		}), "Text")
 		
 		local Arrow = Create("ImageLabel", SelectedFrame, {
-			Size = UDim2.new(0, 16, 0, 16), -- Aumentado
+			Size = UDim2.new(0, 16, 0, 16), 
 			Position = UDim2.new(0, -5, 0.5),
 			AnchorPoint = Vector2.new(1, 0.5),
 			Image = "rbxassetid://10709791523",
@@ -2154,14 +2154,14 @@ function Window:MakeTab(paste, Configs)
 			Name = "DropdownFrame",
 			ClipsDescendants = true,
 			Active = true
-		})Make("Corner", DropFrame, UDim.new(0, 8)) -- Cantos mais arredondados
+		})Make("Corner", DropFrame, UDim.new(0, 8)) 
 		Make("Stroke", DropFrame)
 		Make("Gradient", DropFrame, {Rotation = 60})
 		
 		local ScrollFrame = InsertTheme(Create("ScrollingFrame", DropFrame, {
 			ScrollBarImageColor3 = Theme["Color Theme"],
 			Size = UDim2.new(1, 0, 1, 0),
-			ScrollBarThickness = 2, -- Aumentado
+			ScrollBarThickness = 2, 
 			BackgroundTransparency = 1,
 			BorderSizePixel = 0,
 			CanvasSize = UDim2.new(),
@@ -2328,10 +2328,10 @@ function Window:MakeTab(paste, Configs)
 				
 				local Button = Make("Button", ScrollFrame, {
 					Name = "Option",
-					Size = UDim2.new(1, 0, 0, 22), -- Aumentado
+					Size = UDim2.new(1, 0, 0, 22), 
 					Position = UDim2.new(0, 0, 0.5),
 					AnchorPoint = Vector2.new(0, 0.5)
-				})Make("Corner", Button, UDim.new(0, 5)) -- Cantos mais arredondados
+				})Make("Corner", Button, UDim.new(0, 5)) 
 				
 				local IsSelected = InsertTheme(Create("Frame", Button, {
 					Position = UDim2.new(0, 1, 0.5),
@@ -2352,7 +2352,7 @@ function Window:MakeTab(paste, Configs)
 					TextTransparency = 0.4
 				}), "Text")
 				
-				-- Animação no hover das opções
+				
 				Button.MouseEnter:Connect(function()
 					CreateTween({Button, "BackgroundTransparency", 0.7, 0.2})
 				end)
@@ -2492,15 +2492,15 @@ function Window:MakeTab(paste, Configs)
 		}), "Theme")Make("Corner", Indicator)
 		
 		local SliderIcon = Create("Frame", SliderBar, {
-			Size = UDim2.new(0, 8, 0, 14), -- Aumentado
+			Size = UDim2.new(0, 8, 0, 14), 
 			BackgroundColor3 = Color3.fromRGB(220, 220, 220),
 			Position = UDim2.fromScale(0.3, 0.5),
 			AnchorPoint = Vector2.new(0.5, 0.5),
 			BackgroundTransparency = 0.2
-		})Make("Corner", SliderIcon, UDim.new(0.5, 0)) -- Cantos arredondados
+		})Make("Corner", SliderIcon, UDim.new(0.5, 0)) 
 		
 		local LabelVal = InsertTheme(Create("TextLabel", SliderHolder, {
-			Size = UDim2.new(0, 16, 0, 16), -- Aumentado
+			Size = UDim2.new(0, 16, 0, 16), 
 			AnchorPoint = Vector2.new(1, 0.5),
 			Position = UDim2.new(0, 0, 0.5),
 			BackgroundTransparency = 1,
@@ -2541,7 +2541,7 @@ function Window:MakeTab(paste, Configs)
 		
 		SliderHolder.MouseButton1Down:Connect(function()
 			CreateTween({SliderIcon, "Transparency", 0, 0.3})
-			CreateTween({SliderIcon, "Size", UDim2.new(0, 10, 0, 16), 0.2}) -- Animação no clique
+			CreateTween({SliderIcon, "Size", UDim2.new(0, 10, 0, 16), 0.2}) 
 			Container.ScrollingEnabled = false
 			while UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do task.wait()
 				ControlPos()
@@ -2606,11 +2606,11 @@ function Window:MakeTab(paste, Configs)
 		local Button, LabelFunc = ButtonFrame(Container, TName, TDesc, UDim2.new(1, -38))
 		
 		local SelectedFrame = InsertTheme(Create("Frame", Button, {
-			Size = UDim2.new(0, 150, 0, 20), -- Aumentado
+			Size = UDim2.new(0, 150, 0, 20), 
 			Position = UDim2.new(1, -10, 0.5),
 			AnchorPoint = Vector2.new(1, 0.5),
 			BackgroundColor3 = Theme["Color Stroke"]
-		}), "Stroke")Make("Corner", SelectedFrame, UDim.new(0, 6)) -- Cantos mais arredondados
+		}), "Stroke")Make("Corner", SelectedFrame, UDim.new(0, 6)) 
 		
 		local TextBoxInput = InsertTheme(Create("TextBox", SelectedFrame, {
 			Size = UDim2.new(0.85, 0, 0.85, 0),
@@ -2626,7 +2626,7 @@ function Window:MakeTab(paste, Configs)
 		}), "Text")
 		
 		local Pencil = Create("ImageLabel", SelectedFrame, {
-			Size = UDim2.new(0, 14, 0, 14), -- Aumentado
+			Size = UDim2.new(0, 14, 0, 14), 
 			Position = UDim2.new(0, -5, 0.5),
 			AnchorPoint = Vector2.new(1, 0.5),
 			Image = "rbxassetid://15637081879",
@@ -2689,14 +2689,14 @@ function Window:MakeTab(paste, Configs)
 			AnchorPoint = Vector2.new(0, 1),
 			Position = UDim2.new(0, 0, 1),
 			BackgroundColor3 = Theme["Color Hub 2"]
-		}), "Frame")Make("Corner", FrameHolder, UDim.new(0, 10)) -- Cantos mais arredondados
+		}), "Frame")Make("Corner", FrameHolder, UDim.new(0, 10)) 
 		
 		local ImageLabel = Create("ImageLabel", FrameHolder, {
-			Size = UDim2.new(0, 32, 0, 32), -- Aumentado
+			Size = UDim2.new(0, 32, 0, 32), 
 			Position = UDim2.new(0, 7, 0, 7),
 			Image = Logo,
 			BackgroundTransparency = 1
-		})Make("Corner", ImageLabel, UDim.new(0, 6)) -- Cantos mais arredondados
+		})Make("Corner", ImageLabel, UDim.new(0, 6)) 
 		Make("Stroke", ImageLabel)
 		
 		local LTitle = InsertTheme(Create("TextLabel", FrameHolder, {
@@ -2724,7 +2724,7 @@ function Window:MakeTab(paste, Configs)
 		}), "DarkText")
 		
 		local JoinButton = Create("TextButton", FrameHolder, {
-			Size = UDim2.new(1, -14, 0, 18), -- Aumentado
+			Size = UDim2.new(1, -14, 0, 18), 
 			AnchorPoint = Vector2.new(0.5, 1),
 			Position = UDim2.new(0.5, 0, 1, -7),
 			Text = "Join",
@@ -2732,9 +2732,9 @@ function Window:MakeTab(paste, Configs)
 			TextSize = 12,
 			TextColor3 = Color3.fromRGB(220, 220, 220),
 			BackgroundColor3 = Color3.fromRGB(50, 150, 50)
-		})Make("Corner", JoinButton, UDim.new(0, 6)) -- Cantos mais arredondados
+		})Make("Corner", JoinButton, UDim.new(0, 6)) 
 		
-		-- Animação no botão Join
+		
 		JoinButton.MouseEnter:Connect(function()
 			CreateTween({JoinButton, "BackgroundColor3", Color3.fromRGB(60, 170, 60), 0.2})
 		end)
